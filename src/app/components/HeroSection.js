@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "motion/react";
+import { IoIosFlower } from "react-icons/io";
 const HeroSection = () => {
   return (
     <motion.div
@@ -13,7 +14,15 @@ const HeroSection = () => {
         <h2 className="text-vertical text-white  text-sm font-bold tracking-widest whitespace-nowrap">
           PREMIUM MODEL AGENCY
         </h2>
-        <div className="flex rounded-lg overflow-hidden shadow-lg">
+        <div className="flex items-center">
+          <IoIosFlower />
+          ---------
+        </div>
+        <span className="text-gray-300 text-xs tracking-wide">
+          Elevating elegance and redefining beauty, one model at a time.
+        </span>
+
+        <div className="flex space-x-2 overflow-hidden shadow-lg">
           <button className="px-6 py-2 shadow-lg bg-black">Discover</button>
           <button className="px-6 py-2 shadow-lg bg-white text-black">
             Join Us
