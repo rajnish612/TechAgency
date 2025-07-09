@@ -10,7 +10,7 @@ const HeroSection = () => {
       animate={{ opacity: 1, y: 0 }}
       className="flex justify-center space-y-6 flex-wrap space-x-11 items-center w-full mt-7 p-4"
     >
-      <div className=" flex flex-col space-y-4">
+      <div className=" flex flex-col space-y-4  ">
         <h2 className="text-vertical text-white  text-sm font-bold tracking-widest whitespace-nowrap">
           PREMIUM MODEL AGENCY
         </h2>
