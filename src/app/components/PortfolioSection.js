@@ -2,32 +2,36 @@ const portfolioItems = [
   {
     title: "Summer Editorial",
     category: "Lookbook",
-    imageUrl: "https://picsum.photos/200/305",
+    imageUrl:
+      "https://images.unsplash.com/photo-1644495799968-dd9b4118aef3?q=80&w=2062&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     title: "Street Style Campaign",
     category: "Brand Shoot",
-    imageUrl: "https://picsum.photos/200/300",
+    imageUrl:
+      "https://plus.unsplash.com/premium_photo-1673002094407-a72547fa791a?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     title: "Runway '24",
     category: "Event",
-    imageUrl: "https://picsum.photos/200/301",
+    imageUrl:
+      "https://images.unsplash.com/photo-1570641963303-92ce4845ed4c?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     title: "Modern Muse",
     category: "Photography",
-    imageUrl: "https://picsum.photos/200/302",
+    imageUrl:
+      "https://images.unsplash.com/photo-1567524667890-dba7c551ee1f?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     title: "Bold & Elegant",
     category: "Fashion Film",
-    imageUrl: "https://picsum.photos/200/303",
+    imageUrl: "https://images.unsplash.com/photo-1566827833194-2e4b5626bd1e?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     title: "Haute Couture",
     category: "Designer Collection",
-    imageUrl: "https://picsum.photos/200/304",
+    imageUrl: "https://images.unsplash.com/photo-1665472832709-982b28634160?q=80&w=724&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 ];
 

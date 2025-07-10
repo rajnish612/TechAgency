@@ -61,7 +61,7 @@ export default function ContactUs() {
               <Phone className="text-pink-500 mt-1" />
               <div>
                 <h4 className="text-white font-semibold">Phone</h4>
-                <p className="text-gray-400">+91 98765 43210</p>
+                <p className="text-gray-400">+91 8638 232686</p>
               </div>
             </div>
             <div className="flex items-start gap-4">
@@ -87,6 +87,7 @@ export default function ContactUs() {
                 Your Name
               </label>
               <input
+                required
                 name="name"
                 onChange={handleChange}
                 type="text"
@@ -99,6 +100,7 @@ export default function ContactUs() {
                 Email Address
               </label>
               <input
+                required
                 onChange={handleChange}
                 name="email"
                 type="email"
@@ -111,6 +113,7 @@ export default function ContactUs() {
                 Message
               </label>
               <textarea
+                required
                 name="message"
                 onChange={handleChange}
                 rows="5"

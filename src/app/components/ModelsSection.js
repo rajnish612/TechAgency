@@ -6,7 +6,9 @@ const modelsData = [
   {
     name: "Ava Bennett",
     category: "Women",
-    image: "https://picsum.photos/200/200",
+    image:
+      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+
     height: "5'9\"",
     bust: '34"',
     waist: '24"',
@@ -16,7 +18,9 @@ const modelsData = [
   {
     name: "Liam Taylor",
     category: "Men",
-    image: "/models/liam.jpg",
+    image:
+      "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=3560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+
     height: "6'1\"",
     chest: '40"',
     waist: '32"',
@@ -26,7 +30,8 @@ const modelsData = [
   {
     name: "Mia Johnson",
     category: "Kids",
-    image: "/models/mia.jpg",
+    image:
+      "https://images.unsplash.com/photo-1623582854588-d60de57fa33f?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     height: "4'2\"",
     bust: '22"',
     waist: '20"',
@@ -46,7 +51,7 @@ export default function ModelsSection() {
       : modelsData.filter((model) => model.category === selectedCategory);
 
   return (
-    <section className="py-20 bg-[#1a1a1a] relative">
+    <section id="models" className="py-20 bg-[#1a1a1a] relative">
       <div className="max-w-7xl mx-auto px-4 text-center">
         <h2 className="text-5xl font-extrabold text-white mb-4 tracking-tight">
           Our Talents

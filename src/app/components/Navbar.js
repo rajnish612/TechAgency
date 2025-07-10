@@ -20,7 +20,7 @@ const Navbar = () => {
       {/* Navigation Links */}
       <ul className="hidden md:flex space-x-12 mr-10">
         {[
-          { name: "Models", id: "model" },
+          { name: "Models", id: "models" },
           { name: "About Us", id: "about" },
           { name: "Contact", id: "contact" },
         ].map((link) => (
