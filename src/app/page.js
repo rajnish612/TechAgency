@@ -5,6 +5,8 @@ import Gallery from "./components/Gallery";
 import ServicesSection from "./components/Services";
 import PortfolioSection from "./components/PortfolioSection";
 import ModelsSection from "./components/ModelsSection";
+import AboutUs from "./components/Aboutus";
+import ContactUs from "./components/Contactus";
 
 const page = () => {
   return (
@@ -12,9 +14,11 @@ const page = () => {
       <Navbar />
       <HeroSection />
       <Gallery />
+      <ModelsSection />
       <ServicesSection />
       <PortfolioSection />
-      <ModelsSection />
+      <AboutUs />
+      <ContactUs />
     </div>
   );
 };
