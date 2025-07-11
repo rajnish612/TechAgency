@@ -59,15 +59,16 @@ export default function ModelsSection() {
       : modelsData.filter((model) => model.category === selectedCategory);
 
   return (
-    <section className="min-h-screen bg-gradient-to-br from-[#1a1a1a]   to-[#1a1a1a] relative overflow-hidden">
-      {/* Animated Background Elements */}
+    <section
+      id="models"
+      className="min-h-screen bg-gradient-to-br from-[#1a1a1a]   to-[#1a1a1a] relative overflow-hidden"
+    >
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-pink-500/20 to-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-br from-violet-500/10 to-pink-500/10 rounded-full blur-3xl animate-pulse delay-500"></div>
       </div>
 
-      {/* Floating particles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(20)].map((_, i) => (
           <div
@@ -84,7 +85,6 @@ export default function ModelsSection() {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-20">
-        {/* Header Section */}
         <div className="text-center mb-20">
           <div className="inline-flex items-center gap-2 bg-gradient-to-r from-pink-500/20 to-purple-500/20 backdrop-blur-sm rounded-full px-6 py-2 mb-6 border border-pink-500/30">
             <Award className="w-4 h-4 text-pink-400" />
@@ -103,7 +103,6 @@ export default function ModelsSection() {
           </p>
         </div>
 
-        {/* Filter Buttons */}
         <div className="flex justify-center flex-wrap gap-4 mb-16">
           {categories.map((cat) => (
             <button
@@ -123,7 +122,6 @@ export default function ModelsSection() {
           ))}
         </div>
 
-        {/* Models Grid */}
         <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {filteredModels.map((model, index) => (
             <div
@@ -134,7 +132,6 @@ export default function ModelsSection() {
                 hoveredCard === index ? "ring-2 ring-pink-500/50" : ""
               }`}
             >
-              {/* Status Badge */}
               <div className="absolute top-4 right-4 z-20">
                 <span
                   className={`inline-flex items-center gap-1 px-3 py-1 text-xs font-bold rounded-full backdrop-blur-sm ${
@@ -154,7 +151,6 @@ export default function ModelsSection() {
                 </span>
               </div>
 
-              {/* Image Container */}
               <div className="relative overflow-hidden">
                 <img
                   src={model.image}
@@ -163,7 +159,6 @@ export default function ModelsSection() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent" />
 
-                {/* Hover Overlay */}
                 <div
                   className={`absolute inset-0 bg-gradient-to-t from-pink-900/50 via-transparent to-transparent transition-opacity duration-300 ${
                     hoveredCard === index ? "opacity-100" : "opacity-0"
@@ -171,7 +166,6 @@ export default function ModelsSection() {
                 />
               </div>
 
-              {/* Content */}
               <div className="p-6 space-y-4">
                 <div className="flex items-start justify-between">
                   <div>
@@ -190,7 +184,6 @@ export default function ModelsSection() {
                   </div>
                 </div>
 
-                {/* Stats */}
                 <div className="flex items-center gap-4 text-sm text-gray-400">
                   <div className="flex items-center gap-1">
                     <Users className="w-4 h-4" />
@@ -202,7 +195,6 @@ export default function ModelsSection() {
                   </div>
                 </div>
 
-                {/* Measurements */}
                 <div className="grid grid-cols-2 gap-2 text-sm">
                   <div className="bg-slate-800/50 backdrop-blur-sm rounded-lg p-3 border border-slate-700/50">
                     <span className="text-gray-400">Height</span>
@@ -229,11 +221,6 @@ export default function ModelsSection() {
                     <div className="text-white font-semibold">{model.hips}</div>
                   </div>
                 </div>
-
-                {/* Action Button */}
-                <button className="w-full bg-gradient-to-r from-pink-500 to-purple-500 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-pink-500/30 hover:scale-105 transform active:scale-95">
-                  View Profile
-                </button>
               </div>
             </div>
           ))}
@@ -242,126 +229,3 @@ export default function ModelsSection() {
     </section>
   );
 }
-// import { useState } from "react";
-// import { motion } from "framer-motion";
-
-// const modelsData = [
-//   {
-//     name: "Ava Bennett",
-//     category: "Women",
-//     image:
-//       "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-
-//     height: "5'9\"",
-//     bust: '34"',
-//     waist: '24"',
-//     hips: '35"',
-//     status: "Available",
-//   },
-//   {
-//     name: "Liam Taylor",
-//     category: "Men",
-//     image:
-//       "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=3560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-
-//     height: "6'1\"",
-//     chest: '40"',
-//     waist: '32"',
-//     hips: '38"',
-//     status: "Booked",
-//   },
-//   {
-//     name: "Mia Johnson",
-//     category: "Kids",
-//     image:
-//       "https://images.unsplash.com/photo-1623582854588-d60de57fa33f?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-//     height: "4'2\"",
-//     bust: '22"',
-//     waist: '20"',
-//     hips: '24"',
-//     status: "Available",
-//   },
-// ];
-
-// const categories = ["All", "Women", "Men", "Kids"];
-
-// export default function ModelsSection() {
-//   const [selectedCategory, setSelectedCategory] = useState("All");
-
-//   const filteredModels =
-//     selectedCategory === "All"
-//       ? modelsData
-//       : modelsData.filter((model) => model.category === selectedCategory);
-
-//   return (
-//     <section id="models" className="py-20 bg-[#1a1a1a] relative">
-//       <div className="max-w-7xl mx-auto px-4 text-center">
-//         <h2 className="text-5xl font-extrabold text-white mb-4 tracking-tight">
-//           Our Talents
-//         </h2>
-//         <p className="text-gray-400 mb-12 text-lg">
-//           Explore our handpicked selection of top-tier models and artists.
-//         </p>
-
-//         {/* Filter Buttons */}
-//         <div className="flex justify-center flex-wrap gap-3 mb-12">
-//           {categories.map((cat) => (
-//             <button
-//               key={cat}
-//               onClick={() => setSelectedCategory(cat)}
-//               className={`px-5 py-2 rounded-full text-sm font-medium transition-all border ${
-//                 selectedCategory === cat
-//                   ? "bg-pink-500 text-white border-pink-500 shadow-lg shadow-pink-500/30"
-//                   : "text-gray-300 border-gray-600 hover:bg-pink-600 hover:text-white"
-//               }`}
-//             >
-//               {cat}
-//             </button>
-//           ))}
-//         </div>
-
-//         {/* Models Grid */}
-//         <div className="grid gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-//           {filteredModels.map((model, index) => (
-//             <motion.div
-//               key={index}
-//               initial={{ opacity: 0, y: 40 }}
-//               whileInView={{ opacity: 1, y: 0 }}
-//               transition={{ duration: 0.5, delay: index * 0.1 }}
-//               viewport={{ once: true }}
-//               className="bg-[#2a2a2a]/70 backdrop-blur-md rounded-3xl overflow-hidden shadow-lg hover:shadow-pink-500/30 transition-all transform hover:-translate-y-1"
-//             >
-//               <img
-//                 src={model.image}
-//                 alt={model.name}
-//                 className="w-full h-80 object-cover object-center"
-//               />
-//               <div className="p-5 text-left">
-//                 <h3 className="text-white text-xl font-bold mb-1">
-//                   {model.name}
-//                 </h3>
-//                 <p className="text-pink-400 text-sm mb-3">{model.category}</p>
-//                 <ul className="text-gray-300 text-sm space-y-1 mb-4">
-//                   <li>Height: {model.height}</li>
-//                   {model.bust && <li>Bust: {model.bust}</li>}
-//                   {model.chest && <li>Chest: {model.chest}</li>}
-//                   <li>Waist: {model.waist}</li>
-//                   <li>Hips: {model.hips}</li>
-//                 </ul>
-//                 <span
-//                   className={`inline-block px-3 py-1 text-xs font-semibold rounded-full ${
-//                     model.status === "Available"
-//                       ? "bg-green-500 text-white"
-//                       : "bg-red-500 text-white"
-//                   }`}
-//                 >
-//                   {model.status}
-//                 </span>
-//               </div>
-//             </motion.div>
-//           ))}
-//         </div>
-//       </div>
-//     </section>
-//   );
-// }

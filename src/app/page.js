@@ -7,6 +7,7 @@ import PortfolioSection from "./components/PortfolioSection";
 import ModelsSection from "./components/ModelsSection";
 import AboutUs from "./components/Aboutus";
 import ContactUs from "./components/Contactus";
+import { Footer } from "./components/Footer";
 
 const page = () => {
   return (
@@ -19,6 +20,7 @@ const page = () => {
       <PortfolioSection />
       <AboutUs />
       <ContactUs />
+      <Footer />
     </div>
   );
 };

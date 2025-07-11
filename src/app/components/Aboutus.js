@@ -44,7 +44,7 @@ const AboutUs = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-[#1a1a1a] relative overflow-hidden">
+    <div id="about" className="min-h-screen bg-[#1a1a1a] relative overflow-hidden">
       {/* Floating Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-full blur-3xl animate-pulse"></div>
@@ -71,9 +71,7 @@ const AboutUs = () => {
             </p>
           </div>
 
-          {/* Main Content Grid */}
           <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
-            {/* Text Content */}
             <div
               className={`transition-all duration-1000 delay-300 ${
                 isVisible
@@ -119,7 +117,6 @@ const AboutUs = () => {
               </div>
             </div>
 
-            {/* Visual Element */}
             <div
               className={`transition-all duration-1000 delay-500 ${
                 isVisible
@@ -143,14 +140,12 @@ const AboutUs = () => {
                     </div>
                   </div>
                 </div>
-                {/* Decorative Elements */}
                 <div className="absolute -top-4 -right-4 w-8 h-8 bg-pink-500 rounded-full animate-bounce"></div>
                 <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-purple-500 rounded-full animate-bounce delay-300"></div>
               </div>
             </div>
           </div>
 
-          {/* Stats Section */}
           <div
             className={`grid grid-cols-2 lg:grid-cols-4 gap-8 mb-20 transition-all duration-1000 delay-700 ${
               isVisible
@@ -172,7 +167,6 @@ const AboutUs = () => {
             ))}
           </div>
 
-          {/* Values Section */}
           <div
             className={`transition-all duration-1000 delay-1000 ${
               isVisible
@@ -204,7 +198,6 @@ const AboutUs = () => {
             </div>
           </div>
 
-          {/* Call to Action */}
           <div
             className={`text-center mt-20 transition-all duration-1000 delay-1200 ${
               isVisible
