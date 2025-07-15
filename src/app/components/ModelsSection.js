@@ -239,7 +239,7 @@ export default function TeamSection() {
               Ready to Work With Us?
             </h3>
             <p className="text-slate-600 mb-6">
-              Let's discuss how our expert team can help bring your vision to life.
+              Let&apos;s discuss how our expert team can help bring your vision to life.
             </p>
             <button className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300">
               Get In Touch

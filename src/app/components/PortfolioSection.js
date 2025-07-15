@@ -262,7 +262,7 @@ export default function PortfolioSection() {
               </h3>
             </div>
             <p className="text-slate-600 text-lg mb-8 leading-relaxed">
-              Let's collaborate on your next project and create innovative solutions that 
+              Let&apos;s collaborate on your next project and create innovative solutions that 
               drive results and exceed expectations.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

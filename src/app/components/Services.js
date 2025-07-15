@@ -193,7 +193,7 @@ export default function ServicesSection() {
               </h3>
             </div>
             <p className="text-slate-600 text-lg mb-8 max-w-2xl mx-auto">
-              Let's discuss how we can help transform your ideas into powerful digital solutions
+              Let&apos;s discuss how we can help transform your ideas into powerful digital solutions
               that drive growth and innovation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -156,7 +156,7 @@ const AboutUs = () => {
                 </p>
                 
                 <p>
-                  We don't just build software –
+                  We don&apos;t just build software –
                   <span className="text-teal-600 font-semibold">
                     {" "}
                     we craft digital experiences that drive measurable results
@@ -273,7 +273,7 @@ const AboutUs = () => {
                 </h3>
               </div>
               <p className="text-slate-600 text-lg mb-8 max-w-2xl mx-auto">
-                Let's collaborate to build innovative solutions that drive your business forward.
+                Let&apos;s collaborate to build innovative solutions that drive your business forward.
                 Your success is our mission.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">

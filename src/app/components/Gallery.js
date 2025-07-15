@@ -198,7 +198,7 @@ const Gallery = () => {
               Ready to Start Your Project?
             </h3>
             <p className="text-slate-600 mb-6">
-              Let's discuss how we can bring your vision to life with our expertise.
+              Let&apos;s discuss how we can bring your vision to life with our expertise.
             </p>
             <button className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300">
               View All Projects

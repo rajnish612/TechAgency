@@ -113,7 +113,7 @@ const AboutDeveloper = () => {
               </div>
 
               <p className="text-slate-600 leading-relaxed mb-6">
-                Hi! I'm Rajnish Nath, a passionate full-stack developer who created this website. 
+                Hi! I&apos;m Rajnish Nath, a passionate full-stack developer who created this website. 
                 I specialize in building modern, responsive web applications using the latest technologies. 
                 This project showcases my ability to transform concepts into fully functional, 
                 professional websites with attention to detail and user experience.
@@ -188,7 +188,7 @@ const AboutDeveloper = () => {
             <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 border border-slate-200 shadow-lg">
               <h4 className="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2">
                 <HiSparkles className="w-5 h-5 text-yellow-500" />
-                Let's Connect!
+                Let&apos;s Connect!
               </h4>
               
               <div className="space-y-4">
@@ -232,8 +232,8 @@ const AboutDeveloper = () => {
               <h3 className="text-2xl font-bold">Ready to Work Together?</h3>
             </div>
             <p className="text-blue-100 mb-6 leading-relaxed">
-              I'm available for freelance projects and always excited to work on new challenges. 
-              Let's create something amazing together!
+              I&apos;m available for freelance projects and always excited to work on new challenges. 
+              Let&apos;s create something amazing together!
             </p>
             <motion.a
               href="mailto:rnish612@gmail.com"

@@ -55,7 +55,7 @@ export default function ContactUs() {
     const number = "+15551234567";
     
     if (!form.name || !form.email || !form.message) return;
-    const message = `Hi! I'm ${form.name} (${form.email}). I'm interested in ${form.projectType.replace('-', ' ')} services. ${form.message}`;
+    const message = `Hi! I&apos;m ${form.name} (${form.email}). I&apos;m interested in ${form.projectType.replace('-', ' ')} services. ${form.message}`;
     const url = `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
     
     window.open(url, "_blank");
@@ -105,7 +105,7 @@ export default function ContactUs() {
           <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto rounded-full mb-6"></div>
 
           <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            Ready to transform your ideas into reality? Let's discuss your project and create something amazing together.
+            Ready to transform your ideas into reality? Let&apos;s discuss your project and create something amazing together.
           </p>
         </div>
 
@@ -119,7 +119,7 @@ export default function ContactUs() {
           >
             <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 border border-slate-200 shadow-lg">
               <h3 className="text-2xl font-bold text-slate-800 mb-6">
-                Let's Start a Conversation
+                Let&apos;s Start a Conversation
               </h3>
               <p className="text-slate-600 mb-8 leading-relaxed">
                 Whether you have a specific project in mind or just want to explore possibilities, 

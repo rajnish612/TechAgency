@@ -171,10 +171,12 @@ export const AnimatedTestimonials = ({ testimonials, autoplay = false }) => {
 
   useEffect(() => {
     if (autoplay) {
-      const interval = setInterval(handleNext, 5000);
+      const interval = setInterval(() => {
+        setActive((prev) => (prev + 1) % testimonials.length);
+      }, 5000);
       return () => clearInterval(interval);
     }
-  }, [autoplay]);
+  }, [autoplay, testimonials.length]);
 
   const randomRotateY = () => {
     return Math.floor(Math.random() * 21) - 10;
@@ -292,7 +294,7 @@ export const AnimatedTestimonials = ({ testimonials, autoplay = false }) => {
                 transition={{ delay: 0.2, duration: 0.4 }}
                 className="text-5xl text-purple-400/40"
               >
-                "
+                &quot;
               </motion.div>
 
               {/* Quote Text */}
