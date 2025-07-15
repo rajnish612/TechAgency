@@ -4,8 +4,9 @@ import HeroSection from "./components/HeroSection";
 import Gallery from "./components/Gallery";
 import ServicesSection from "./components/Services";
 import PortfolioSection from "./components/PortfolioSection";
-import ModelsSection from "./components/ModelsSection";
+import TeamSection from "./components/ModelsSection";
 import AboutUs from "./components/Aboutus";
+import AboutDeveloper from "./components/AboutDeveloper";
 import ContactUs from "./components/Contactus";
 import { Footer } from "./components/Footer";
 
@@ -15,10 +16,11 @@ const page = () => {
       <Navbar />
       <HeroSection />
       <Gallery />
-      <ModelsSection />
+      <TeamSection />
       <ServicesSection />
       <PortfolioSection />
       <AboutUs />
+      <AboutDeveloper />
       <ContactUs />
       <Footer />
     </div>

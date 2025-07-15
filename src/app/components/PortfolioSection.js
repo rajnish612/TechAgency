@@ -1,53 +1,79 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import { motion } from "motion/react";
+import { FaGithub, FaExternalLinkAlt, FaCode, FaMobile, FaDesktop, FaCloud, FaDatabase, FaRocket } from "react-icons/fa";
+import { HiSparkles, HiTrendingUp, HiEye, HiLightBulb } from "react-icons/hi";
 
 const portfolioItems = [
   {
-    title: "Summer Editorial",
-    category: "Lookbook",
+    title: "SaaS Dashboard",
+    category: "Web Application",
     imageUrl:
-      "https://images.unsplash.com/photo-1644495799968-dd9b4118aef3?q=80&w=2062&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    description: "Modern analytics dashboard with real-time data visualization",
+    tech: ["React", "D3.js", "Node.js"],
+    icon: <FaDesktop className="w-4 h-4" />,
+    color: "bg-blue-50 border-blue-200 text-blue-600"
   },
   {
-    title: "Street Style Campaign",
-    category: "Brand Shoot",
+    title: "Mobile Banking App",
+    category: "Mobile App",
     imageUrl:
-      "https://plus.unsplash.com/premium_photo-1673002094407-a72547fa791a?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    description: "Secure mobile banking with biometric authentication",
+    tech: ["React Native", "Firebase", "Biometric API"],
+    icon: <FaMobile className="w-4 h-4" />,
+    color: "bg-emerald-50 border-emerald-200 text-emerald-600"
   },
   {
-    title: "Runway '24",
-    category: "Event",
+    title: "E-Commerce Platform",
+    category: "Web Application",
     imageUrl:
-      "https://images.unsplash.com/photo-1570641963303-92ce4845ed4c?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    description: "Full-stack e-commerce solution with payment integration",
+    tech: ["Next.js", "Stripe", "MongoDB"],
+    icon: <FaDesktop className="w-4 h-4" />,
+    color: "bg-purple-50 border-purple-200 text-purple-600"
   },
   {
-    title: "Modern Muse",
-    category: "Photography",
+    title: "AI Chat Application",
+    category: "AI/ML",
     imageUrl:
-      "https://images.unsplash.com/photo-1567524667890-dba7c551ee1f?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    description: "Intelligent chatbot with natural language processing",
+    tech: ["Python", "OpenAI", "FastAPI"],
+    icon: <HiLightBulb className="w-4 h-4" />,
+    color: "bg-orange-50 border-orange-200 text-orange-600"
   },
   {
-    title: "Bold & Elegant",
-    category: "Fashion Film",
+    title: "Cloud Infrastructure",
+    category: "DevOps",
     imageUrl:
-      "https://images.unsplash.com/photo-1566827833194-2e4b5626bd1e?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2344&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    description: "Scalable cloud architecture with auto-scaling capabilities",
+    tech: ["AWS", "Docker", "Kubernetes"],
+    icon: <FaCloud className="w-4 h-4" />,
+    color: "bg-cyan-50 border-cyan-200 text-cyan-600"
   },
   {
-    title: "Haute Couture",
-    category: "Designer Collection",
+    title: "Data Analytics API",
+    category: "Backend",
     imageUrl:
-      "https://images.unsplash.com/photo-1665472832709-982b28634160?q=80&w=724&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    description: "High-performance API for real-time data processing",
+    tech: ["Node.js", "PostgreSQL", "Redis"],
+    icon: <FaDatabase className="w-4 h-4" />,
+    color: "bg-teal-50 border-teal-200 text-teal-600"
   },
 ];
 
 const categories = [
   "All",
-  "Lookbook",
-  "Brand Shoot",
-  "Event",
-  "Photography",
-  "Fashion Film",
-  "Designer Collection",
+  "Web Application",
+  "Mobile App",
+  "AI/ML",
+  "DevOps",
+  "Backend",
 ];
 
 export default function PortfolioSection() {
@@ -75,34 +101,44 @@ export default function PortfolioSection() {
   };
 
   return (
-    <section className="py-20 bg-[#1a1a1a] relative overflow-hidden">
-      {/* Floating Background Elements */}
+    <section className="py-20 bg-gradient-to-br from-slate-50 via-white to-blue-50 relative overflow-hidden">
+      {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-10 left-10 w-40 h-40 bg-gradient-to-br from-pink-500/10 to-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-20 w-60 h-60 bg-gradient-to-br from-purple-500/10 to-blue-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 left-1/4 w-32 h-32 bg-gradient-to-br from-blue-500/10 to-pink-500/10 rounded-full blur-3xl animate-pulse delay-2000"></div>
+        <div className="absolute top-20 left-20 w-72 h-72 bg-gradient-to-br from-blue-200/20 to-cyan-200/20 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-20 w-96 h-96 bg-gradient-to-br from-indigo-200/20 to-blue-200/20 rounded-full blur-3xl"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 relative z-10">
+      {/* Grid Pattern */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(59,130,246,0.02)_1px,transparent_1px),linear-gradient(0deg,rgba(59,130,246,0.02)_1px,transparent_1px)] bg-[size:60px_60px]"></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Header Section */}
         <div
           className={`text-center mb-16 transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <div className="inline-block mb-4">
-            <span className="text-pink-500 text-sm font-semibold tracking-widest uppercase">
-              Portfolio
+          <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm rounded-full px-6 py-3 mb-6 border border-blue-100 shadow-lg">
+            <HiSparkles className="w-4 h-4 text-blue-600" />
+            <span className="text-slate-700 text-sm font-semibold">
+              Our Work
             </span>
           </div>
-          <h2 className="text-5xl md:text-6xl font-thin text-white mb-6 tracking-wide">
-            Our Work
-            <div className="w-20 h-1 bg-gradient-to-r from-pink-500 to-purple-500 mx-auto mt-4 rounded-full"></div>
+
+          <h2 className="text-5xl md:text-7xl font-bold text-slate-800 mb-6 tracking-tight">
+            <span className="bg-gradient-to-r from-blue-600 via-cyan-600 to-teal-600 bg-clip-text text-transparent">
+              Portfolio
+            </span>{" "}
+            <span className="text-slate-700">Showcase</span>
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto leading-relaxed">
-            A curated collection of our most compelling campaigns, editorial
-            shoots, and creative collaborations that define contemporary fashion
-            storytelling.
+
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto rounded-full mb-6"></div>
+
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            Explore our diverse range of projects showcasing cutting-edge technology solutions 
+            and innovative development approaches.
           </p>
         </div>
 
@@ -112,15 +148,15 @@ export default function PortfolioSection() {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <div className="bg-gray-800/30 backdrop-blur-sm rounded-full p-2 border border-gray-700/30">
+          <div className="bg-white/80 backdrop-blur-sm rounded-full p-2 border border-slate-200 shadow-lg">
             {categories.map((category, index) => (
               <button
                 key={category}
                 onClick={() => handleCategoryChange(category)}
-                className={`px-6 py-3 mx-1 rounded-full text-sm font-medium transition-all duration-300 ${
+                className={`px-6 py-3 mx-1 rounded-full text-sm font-semibold transition-all duration-300 ${
                   activeCategory === category
-                    ? "bg-gradient-to-r from-pink-500 to-purple-500 text-white shadow-lg transform scale-105"
-                    : "text-gray-400 hover:text-white hover:bg-gray-700/50"
+                    ? "bg-gradient-to-r from-blue-600 to-cyan-600 text-white shadow-lg transform scale-105"
+                    : "text-slate-600 hover:text-blue-600 hover:bg-blue-50"
                 }`}
               >
                 {category}
@@ -132,103 +168,114 @@ export default function PortfolioSection() {
         {/* Portfolio Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredItems.map((item, index) => (
-            <div
+            <motion.div
               key={`${item.title}-${index}`}
-              className={`group relative overflow-hidden rounded-3xl transition-all duration-1000 ${
-                isVisible
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-10"
-              }`}
-              style={{
-                transitionDelay: `${500 + index * 100}ms`,
-                animationDelay: `${500 + index * 100}ms`,
-              }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="group relative overflow-hidden rounded-2xl bg-white/80 backdrop-blur-sm border border-slate-200 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2"
               onMouseEnter={() => setHoveredItem(index)}
               onMouseLeave={() => setHoveredItem(null)}
             >
               {/* Image Container */}
-              <div className="relative aspect-[4/5] overflow-hidden rounded-3xl bg-gray-900">
+              <div className="relative aspect-video overflow-hidden">
                 <img
                   src={item.imageUrl}
                   alt={item.title}
-                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out"
+                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                 />
 
                 {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 via-transparent to-transparent"></div>
 
-                {/* Hover Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-pink-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-                {/* Content Overlay */}
-                <div className="absolute inset-0 flex flex-col justify-end p-8 text-white">
-                  <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                    <span className="inline-block px-3 py-1 bg-pink-500/80 backdrop-blur-sm rounded-full text-xs font-medium mb-3 tracking-wide">
-                      {item.category}
-                    </span>
-                    <h3 className="text-2xl font-bold mb-2 group-hover:text-pink-300 transition-colors duration-300">
-                      {item.title}
-                    </h3>
-                    <div className="w-0 group-hover:w-full h-0.5 bg-gradient-to-r from-pink-500 to-purple-500 transition-all duration-500"></div>
+                {/* Category Badge */}
+                <div className={`absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold ${item.color} border backdrop-blur-sm`}>
+                  <div className="flex items-center gap-1">
+                    {item.icon}
+                    <span>{item.category}</span>
                   </div>
                 </div>
 
-                {/* Floating Elements */}
-                <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-x-4 group-hover:translate-x-0">
-                  <div className="w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
-                    <svg
-                      className="w-4 h-4 text-white"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
+                {/* Hover Overlay with Actions */}
+                <div className="absolute inset-0 bg-gradient-to-t from-blue-600/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
+                  <div className="flex gap-3">
+                    <button className="p-2 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-colors">
+                      <FaGithub className="w-4 h-4" />
+                    </button>
+                    <button className="p-2 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-colors">
+                      <FaExternalLinkAlt className="w-4 h-4" />
+                    </button>
+                    <button className="p-2 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-colors">
+                      <HiEye className="w-4 h-4" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className="p-6 space-y-4">
+                <div>
+                  <h3 className="text-xl font-bold text-slate-800 mb-2 group-hover:text-blue-600 transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="text-slate-600 text-sm leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
+
+                {/* Technologies */}
+                <div className="flex flex-wrap gap-2">
+                  {item.tech.map((tech, techIndex) => (
+                    <span
+                      key={techIndex}
+                      className="px-2 py-1 bg-slate-100 text-slate-600 text-xs rounded-full"
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M8 7l4-4m0 0l4 4m-4-4v18"
-                      />
-                    </svg>
-                  </div>
+                      {tech}
+                    </span>
+                  ))}
                 </div>
 
-                {/* Decorative Corner Elements */}
-                <div className="absolute top-0 left-0 w-20 h-20 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <div className="absolute top-4 left-4 w-3 h-3 bg-pink-500 rounded-full animate-pulse"></div>
-                  <div className="absolute top-8 left-8 w-2 h-2 bg-purple-500 rounded-full animate-pulse delay-200"></div>
+                {/* Action Button */}
+                <div className="pt-4 border-t border-slate-100">
+                  <button className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 text-white py-2 px-4 rounded-lg font-semibold hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 flex items-center justify-center gap-2">
+                    <FaRocket className="w-4 h-4" />
+                    View Project
+                  </button>
                 </div>
               </div>
-
-              {/* Hover Effects */}
-              <div className="absolute inset-0 rounded-3xl border-2 border-transparent group-hover:border-pink-500/30 transition-all duration-500 pointer-events-none"></div>
-
-              {/* Glow Effect */}
-              <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
-                <div className="absolute inset-0 bg-gradient-to-r from-pink-500/20 to-purple-500/20 rounded-3xl blur-xl transform scale-105"></div>
-              </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 
         {/* Call to Action */}
-        <div
-          className={`text-center mt-20 transition-all duration-1000 delay-1000 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          }`}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="text-center mt-16"
         >
-          <div className="bg-gray-800/30 backdrop-blur-sm rounded-3xl p-8 border border-gray-700/30 max-w-2xl mx-auto">
-            <h3 className="text-2xl font-light text-white mb-4">
-              Ready to Create Something Extraordinary?
-            </h3>
-            <p className="text-gray-400 mb-6">
-              Let's collaborate on your next fashion campaign and bring your
-              vision to life.
+          <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 border border-slate-200 shadow-lg max-w-3xl mx-auto">
+            <div className="flex items-center justify-center gap-4 mb-6">
+              <HiTrendingUp className="text-blue-600 text-3xl" />
+              <h3 className="text-3xl font-bold text-slate-800">
+                Ready to Build Something Amazing?
+              </h3>
+            </div>
+            <p className="text-slate-600 text-lg mb-8 leading-relaxed">
+              Let's collaborate on your next project and create innovative solutions that 
+              drive results and exceed expectations.
             </p>
-            <button className="bg-gradient-to-r from-pink-500 to-purple-500 text-white px-8 py-3 rounded-full font-medium hover:from-pink-600 hover:to-purple-600 transition-all duration-300 hover:scale-105 hover:shadow-xl">
-              Start Your Project
-            </button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 flex items-center justify-center gap-2">
+                <FaRocket className="w-4 h-4" />
+                Start Your Project
+              </button>
+              <button className="bg-white border border-slate-200 text-slate-700 px-8 py-3 rounded-full font-semibold hover:bg-slate-50 transition-all duration-300">
+                View All Work
+              </button>
+            </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
