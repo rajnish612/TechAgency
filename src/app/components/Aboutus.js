@@ -108,7 +108,7 @@ const AboutUs = () => {
             
             <h1 className="text-5xl md:text-7xl font-bold text-slate-800 mb-6 tracking-tight">
               <span className="bg-gradient-to-r from-blue-600 via-cyan-600 to-teal-600 bg-clip-text text-transparent">
-                Building Tomorrow's
+                Building Tomorrow&apos;s
               </span>
               <br />
               <span className="text-slate-700">Digital Solutions</span>

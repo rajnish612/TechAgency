@@ -123,7 +123,7 @@ export default function ContactUs() {
               </h3>
               <p className="text-slate-600 mb-8 leading-relaxed">
                 Whether you have a specific project in mind or just want to explore possibilities, 
-                we're here to help. Reach out through any of the channels below.
+                we&apos;re here to help. Reach out through any of the channels below.
               </p>
 
               <div className="grid grid-cols-1 gap-6">
